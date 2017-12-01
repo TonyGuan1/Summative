@@ -29,12 +29,13 @@ public class MainScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Check = new javax.swing.JFrame();
+        javax.swing.JFrame Check = new javax.swing.JFrame();
         mybook = new javax.swing.JButton();
         available = new javax.swing.JButton();
         checkout = new javax.swing.JButton();
         addbook = new javax.swing.JButton();
         labelTitle = new javax.swing.JLabel();
+        mainLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout CheckLayout = new javax.swing.GroupLayout(Check.getContentPane());
         Check.getContentPane().setLayout(CheckLayout);
@@ -48,6 +49,7 @@ public class MainScreen extends javax.swing.JFrame {
         );
 
         Check.getAccessibleContext().setAccessibleName("Check");
+        Check.getAccessibleContext().setAccessibleParent(Check);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Classroom Catalog");
@@ -85,6 +87,8 @@ public class MainScreen extends javax.swing.JFrame {
         labelTitle.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         labelTitle.setText("Classroom Catalog");
 
+        mainLabel2.setText("Hello");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,15 +98,18 @@ public class MainScreen extends javax.swing.JFrame {
             .addComponent(available, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(addbook, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(labelTitle)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelTitle)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(mainLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(labelTitle)
+                .addComponent(labelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mybook, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -110,18 +117,22 @@ public class MainScreen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(available, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addbook, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(addbook, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mainLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         checkout.getAccessibleContext().setAccessibleName("Button2");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void mybookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybookActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Check x = new Check();
+        Window x = new Window();
         x.setVisible(true);
     }//GEN-LAST:event_mybookActionPerformed
 
@@ -173,11 +184,11 @@ public class MainScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JFrame Check;
     private javax.swing.JButton addbook;
     private javax.swing.JButton available;
     private javax.swing.JButton checkout;
     private javax.swing.JLabel labelTitle;
+    public javax.swing.JLabel mainLabel2;
     private javax.swing.JButton mybook;
     // End of variables declaration//GEN-END:variables
 }

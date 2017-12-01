@@ -5,8 +5,6 @@
  */
 package classroom.catalog;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author S199817793
@@ -132,20 +130,29 @@ public class MainScreen extends javax.swing.JFrame {
     private void mybookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mybookActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Window x = new Window();
-        x.setVisible(true);
+        Window myBookScreen = new Window();
+        myBookScreen.setVisible(true);
     }//GEN-LAST:event_mybookActionPerformed
 
     private void availableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availableActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        availableScreen availableScreen = new availableScreen();
+        availableScreen.setVisible(true);
     }//GEN-LAST:event_availableActionPerformed
 
     private void checkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        checkedOutScreen checkedOutScreen = new checkedOutScreen();
+        checkedOutScreen.setVisible(true);
     }//GEN-LAST:event_checkoutActionPerformed
 
     private void addbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbookActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        addBookScreen addBookScreen = new addBookScreen();
+        addBookScreen.setVisible(true);
     }//GEN-LAST:event_addbookActionPerformed
 
     /**

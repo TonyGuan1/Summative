@@ -6,6 +6,7 @@ public class Library {
         Scanner scanner = new Scanner (System.in);
         List<Books> bookList= new ArrayList<>();
         
+        
         String bName;
         String bAuthor;
         String action;
@@ -13,7 +14,7 @@ public class Library {
         int bookNum;
         String bookAction;
         
-        Books.instructions();
+        instructions();
         try{
         loop: while (true) {
                 System.out.println("\nEnter the action");
@@ -31,28 +32,27 @@ public class Library {
                         break;
                    
                     case "instructions":
-                        Books.instructions();
+                        instructions();
                         break;
                      
                     case "list":
                         for(Books book : bookList) {
-                            System.out.println("Book name: " + book.getName()+ ", Book id: " + book.getId()+ ", Book Author: " + book.getAuth() + ", Book Location; " + book.getLocation());
+                            System.out.println("Book name: " + book.getName()+ ", Book id: " + book.getId()+ ", Book Author: " + book.getAuth() + ", Book Location; " + book.getLocation());   
                         }
+                        break;
                     
                     case "borrowing":
                         System.out.println("\nEnter the book ID"); 
                         bookNum = Integer.parseInt(reader.nextLine());
                         System.out.println(bookList.get(bookNum-1).getLocation());
                         System.out.println("Type:\nborrow to take a book out\nreturn to give the book back");
-                        System.out.println("11");
-                        bookAction = scanner.nextLine();    
-                        System.out.println("22");
+                        bookAction = reader.nextLine();    
                         switch (bookAction){
                             case "borrow":
                                 bookList.get(bookNum-1).borrowed();
                                 break;
                             case "return":
-                                bookList.get(bookNum-1).returned();
+                                bookList.get(bookNum-1).borrowed();
                                 break;
                             default:
                                 System.out.println("That doesn't work");
@@ -75,6 +75,9 @@ public class Library {
             System.out.println("Book name: " + book.getName()+ ", Book id: " + book.getId()+ ", Book Author: " + book.getAuth() + ", Book Location; " + book.getLocation());
         }
     }
+    public static void instructions(){
+        System.out.println("Type: \nend to exit\nadd to insert a book\nborrow to check out/in\nlist to get the booklist\ninstructions to get help");
+    }
 }
 // author, name, check in/out
 class Books
@@ -83,12 +86,13 @@ class Books
     private int stId= 0;
     private String bauth;
     private boolean location;
-    
+    String x= "";
     public Books(String name, String author, int id) {
         this.bauth = author;
         this.fname = name;
         this.stId = id;
         this.location = true;
+        
     }
     
     public Books() {
@@ -111,8 +115,13 @@ class Books
         return this.bauth;
     }
     
-    public boolean getLocation(){
-        return this.location;
+    public String getLocation(){
+        if (this.location == true){
+              x= "Available";
+        }else{
+              x="Checked Out";
+        }
+        return x;
     }
 
     public boolean updateName(String name)
@@ -127,7 +136,5 @@ class Books
     public void returned(){
         this.location = true;
     }   
-    public static void instructions(){
-        System.out.println("Type: \nend to exit\nadd to insert a book\nborrow to check out/in\nlist to get the booklist\ninstructions to get help");
-    }
+    
 }
